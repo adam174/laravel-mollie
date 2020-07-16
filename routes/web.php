@@ -23,4 +23,8 @@ Route::get('/payment-success','MollieController@paymentSuccess')->name('payment.
 
 Auth::routes();
 
+Route::middleware('auth')->group(function () {
+    Route::name('subscriptions.store')->post('/subscriptions/store/{plan}', 'CreateSubscriptionController');
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
