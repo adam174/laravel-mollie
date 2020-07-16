@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/mollie-payment','MollieController@preparePayment')->name('mollie.payment');
+Route::get('/mollie-payment/{id}','MollieController@preparePayment')->name('mollie.payment');
 Route::get('/payment-success','MollieController@paymentSuccess')->name('payment.success');
 
 
